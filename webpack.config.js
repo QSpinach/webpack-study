@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   mode: "production",
@@ -16,6 +17,7 @@ module.exports = {
     hot: true,
   },
   plugins: [
+    // new CleanWebpackPlugin(['dist']),
     new webpack.HotModuleReplacementPlugin(),
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
@@ -45,7 +47,7 @@ module.exports = {
         'sass-loader'
       ]
     }, {
-      test: /\.jpg$/,
+      test: /\.(png|svg|jpg|gif)$/,
       use: [{
         loader: 'url-loader',
         options: {
@@ -53,6 +55,11 @@ module.exports = {
           name: '[hash:8]-[name].[ext]'
         }
       }]
+    }, {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      use: [
+        'file-loader'
+      ]
     }]
   }
 }
