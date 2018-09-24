@@ -13,8 +13,11 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
-    contentBase: 'src',
+    // contentBase: 'src',
     hot: true,
+  },
+  performance: {
+    hints:false
   },
   plugins: [
     // new CleanWebpackPlugin(['dist']),
@@ -60,6 +63,10 @@ module.exports = {
       use: [
         'file-loader'
       ]
+    }, {
+      test: /\.js$/, 
+      use: 'babel-loader', 
+      exclude: /node_modules/
     }]
   }
 }

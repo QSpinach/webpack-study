@@ -13,3 +13,4 @@ $(function(){
 class Person {
   static info = { name: 'syq', age: 20 }
 }
+console.log(Person.info);
