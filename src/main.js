@@ -1,7 +1,9 @@
 import Vue from 'vue'
-import app from 'App'
+import app from './App'
+import router from './router'
 
-var vm = new Vue({
+new Vue({
   el: '#app',
+  router,
   render: c => c(app)
 })
