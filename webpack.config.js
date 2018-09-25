@@ -2,9 +2,10 @@ const webpack = require('webpack')
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: './src/main.js', // 入口文件
   output: { // 出口文件
     filename: 'bundle.js',
@@ -23,7 +24,8 @@ module.exports = {
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
       title: 'Output Management'
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   module: { // 用于配置第三方模块
     rules: [{
@@ -60,6 +62,10 @@ module.exports = {
       use: [
         'file-loader'
       ]
+    }, {
+      test: /\.js$/,
+      use: 'babel-loader',
+      exclude: /node_modules/
     }, {
       test: /\.vue$/,
       use: 'vue-loader'

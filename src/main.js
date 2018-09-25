@@ -1,18 +1,7 @@
 import Vue from 'vue'
-import Login from './login.vue'
+import login from './login.vue'
 
 var vm = new Vue({
   el: '#app',
-  data: function(){
-    return {
-      msg: "123",
-    }
-  },
-  components: {
-    Login,
-  },
-  template: '<Login/>'
+  render: c => c(login)
 })
-
-
-console.log(vm);
