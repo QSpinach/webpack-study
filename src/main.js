@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import login from './login.vue'
+import app from 'App'
 
 var vm = new Vue({
   el: '#app',
-  render: c => c(login)
+  render: c => c(app)
 })
