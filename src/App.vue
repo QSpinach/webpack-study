@@ -2,6 +2,7 @@
   <div>
     <h1>这是APP组件</h1>
     <mt-button type="default" @click="showT">default</mt-button>
+    <button class="mui-btn mui-btn-royal">紫色</button>
     <router-link to="/account">account</router-link>
     <router-link to="/goodslist">goodslist</router-link>
     <router-view/>

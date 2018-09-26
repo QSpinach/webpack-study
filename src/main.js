@@ -13,6 +13,8 @@ import { Button, Cell } from 'mint-ui'
 Vue.component(Button.name, Button)
 Vue.component(Cell.name, Cell)
 
+import './lib/mui/css/mui.min.css'
+
 new Vue({
   el: '#app',
   router,
