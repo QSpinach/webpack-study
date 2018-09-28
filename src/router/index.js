@@ -5,6 +5,7 @@ import Home from '@/pages/Home'
 import Member from '@/pages/Member'
 import Setting from '@/pages/Setting'
 import Shopping from '@/pages/Shopping'
+import NewsList from '@/pages/NewList'
 
 Vue.use(Router)
 
@@ -28,6 +29,9 @@ export default new Router({
     path: '/shopping',
     name: 'shopping',
     component: Shopping,
+  }, {
+    path: '/home/newslist',
+    component: NewsList
   }],
   linkActiveClass: 'mui-active'
 })

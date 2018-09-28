@@ -13,6 +13,9 @@ Vue.component(SwipeItem.name, SwipeItem);
 Vue.use(VueResource)
 Vue.use(Lazyload);
 
+// 设置请求的根路径
+Vue.http.options.root = 'http://rap2api.taobao.org/app/mock/86300';
+
 new Vue({
   el: '#app',
   router,

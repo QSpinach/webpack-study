@@ -57,7 +57,7 @@ export default {
   methods: {
     getSwiper() {
       this.$http
-        .get("http://rap2api.taobao.org/app/mock/86300/api/swiper")
+        .get("api/swiper")
         .then(rs => rs.body)
         .then(result => {
           if (!result.isOk) {
