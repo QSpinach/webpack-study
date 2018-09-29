@@ -6,6 +6,7 @@ import Member from '@/pages/Member'
 import Setting from '@/pages/Setting'
 import Shopping from '@/pages/Shopping'
 import NewsList from '@/pages/NewList'
+import NewInfo from '@/pages/NewInfo'
 
 Vue.use(Router)
 
@@ -32,6 +33,9 @@ export default new Router({
   }, {
     path: '/home/newslist',
     component: NewsList
+  }, {
+    path: '/home/newsinfo/:id',
+    component: NewInfo
   }],
   linkActiveClass: 'mui-active'
 })
