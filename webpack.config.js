@@ -78,7 +78,7 @@ module.exports = {
     // 例如 import Vue from 'vue'，会自动到 'vue/dist/vue.common.js'中寻找
     alias: {
       '@': path.resolve('src'),
-      'vue$': 'vue/dist/vue.common.js'
+      // 'vue$': 'vue/dist/vue.common.js'
     }
   }
 }
