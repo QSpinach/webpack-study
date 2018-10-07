@@ -9,11 +9,7 @@
     <hr>
 
     <!-- 缩略图区域 -->
-    <div class="thumbs">
-      <img class="preview-img" v-for="(item, index) in list" :src="item.src" height="100" :key="item.src">
-    </div>
-
-      <vue-preview :slides="list"></vue-preview>
+    <vue-preview :slides="list"></vue-preview>
     <!-- 图片内容区域 -->
     <div class="content" v-html="photoinfo.content"></div>
 
