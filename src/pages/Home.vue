@@ -2,7 +2,8 @@
   <div>
     <mt-swipe :auto="4000" :prevent="true">
       <mt-swipe-item v-for="(item, index) in swipes" :key="item.id">
-        <img v-lazy="item.image" :alt="item.title" width="100%">
+        <img :src="item.image" :alt="item.title" width="100%">
+        <!-- <img v-lazy="item.image" :alt="item.title" width="100%"> -->
       </mt-swipe-item>
     </mt-swipe>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -33,36 +34,38 @@
 </template>
 
 <script>
-import { Toast } from "mint-ui";
+import { Toast, Indicator } from "mint-ui";
 export default {
   name: "home",
   data: () => {
     return {
       swipes: [
-        {
-          id: 1,
-          title: "1",
-          image: ""
-        },
-        {
-          id: 2,
-          title: "2",
-          image: ""
-        },
-        {
-          id: 3,
-          title: "3",
-          image: ""
-        }
+        // {
+        //   id: 1,
+        //   title: "1",
+        //   image: ""
+        // },
+        // {
+        //   id: 2,
+        //   title: "2",
+        //   image: ""
+        // },
+        // {
+        //   id: 3,
+        //   title: "3",
+        //   image: ""
+        // }
       ]
     };
   },
   methods: {
     getSwiper() {
+      Indicator.open();
       this.$http
         .get("api/swiper")
         .then(rs => rs.body)
         .then(result => {
+          Indicator.close();
           if (!result.isOk) {
             Toast({
               message: "轮播图加载失败",
@@ -74,6 +77,7 @@ export default {
           this.swipes = result.data;
         })
         .catch(error => {
+          Indicator.close();
           Toast({
             message: "轮播图加载失败",
             position: "bottom",
